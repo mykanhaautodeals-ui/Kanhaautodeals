@@ -23,7 +23,7 @@ function Facility() {
         {/* Modern Infrastructure */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden text-left flex flex-col">
           <img
-            src="/images/infra.jpg"
+            src="/src/assets/ModernImages.jpg"
             alt="Modern Infrastructure"
             className="w-full h-56 md:h-64 object-cover"
           />
@@ -57,7 +57,7 @@ function Facility() {
         {/* Advanced Equipment */}
         <div className="bg-white rounded-xl shadow-md overflow-hidden text-left flex flex-col">
           <img
-            src="/images/equipment.jpg"
+            src="/src/assets/Advanceddiagnosticmaintenance.jpg"
             alt="Advanced Equipment"
             className="w-full h-56 md:h-64 object-cover"
           />

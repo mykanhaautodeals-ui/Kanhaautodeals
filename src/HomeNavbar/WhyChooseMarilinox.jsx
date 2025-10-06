@@ -1,7 +1,7 @@
 import React from "react";
 
 const WhyChooseMarilinox = () => (
-  <div className="bg-gray-50 min-h-screen flex flex-col items-center py-8 sm:py-12 px-4 sm:px-6">
+  <div className="bg-gray-50  flex flex-col items-center py-8 sm:py-12 px-4 sm:px-6">
     <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">
       Why Choose <span className="text-green-500">Kanhaautodeals</span>
     </h2>

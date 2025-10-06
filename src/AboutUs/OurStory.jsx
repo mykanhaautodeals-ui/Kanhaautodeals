@@ -18,7 +18,7 @@ const OurStory = () => {
         </p>
         <div className="flex items-center mt-6">
           <img
-            src="/path/to/ministry-logo.png" // Replace with actual logo path
+            src="/src/assets/RoadTransportLogo.png" 
             alt="Ministry of Road Transport Logo"
             className="h-10 mr-4"
           />
@@ -32,7 +32,7 @@ const OurStory = () => {
       {/* Right Section: Image */}
       <div className="flex-1">
         <img
-          src="/path/to/vehicle-scrapping-image.jpg" // Replace with actual image path
+          src="/src/assets/ScrappingCarImages.jpg" // Replace with actual image path
           alt="Vehicle Scrapping Facility"
           className="w-full h-auto rounded-lg shadow-lg"
         />
