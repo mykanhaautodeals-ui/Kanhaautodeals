@@ -73,7 +73,7 @@ const VehicleScrapForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-gray-100 items-center justify-center px-4 sm:px-6 lg:px-12 py-8">
+    <div className=" flex bg-gray-100 items-center justify-center px-4 sm:px-6 lg:px-12 py-8 mb-8 mt-16">
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto w-full rounded-lg shadow-2xl overflow-hidden">
         
         {/* Left Section */}

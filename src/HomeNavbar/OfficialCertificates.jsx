@@ -17,7 +17,7 @@ const CheckIcon = () => (
 );
 
 const OfficialCertificates = () => (
-  <div className="bg-gray-50 min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-12 py-12">
+  <div className="bg-gray-50 flex flex-col items-center px-4 sm:px-6 lg:px-12 py-5">
     {/* Heading */}
     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-3">
       Official Certificates You'll Receive
