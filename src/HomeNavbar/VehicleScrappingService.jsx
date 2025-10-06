@@ -2,7 +2,7 @@ import React from "react";
 
 const VehicleScrappingService = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className=" bg-white flex flex-col mb-8">
       {/* Header Section */}
       <div className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto pt-16 px-8">
         <div className="md:w-1/2">

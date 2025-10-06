@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 const images = [
-  "/images/gallery1.jpg",
-  "/images/gallery2.jpg",
-  "/images/gallery3.jpg",
-  "/images/gallery4.jpg",
-  "/images/gallery5.jpg",
-  "/images/gallery6.jpg",
-  "/images/gallery7.jpg",
-  "/images/gallery8.jpg",
-  "/images/gallery9.jpg",
-  "/images/gallery10.jpg",
+  "/src/assets/Advanceddiagnosticmaintenance.jpg",
+  "/src/assets/ModernImages.jpg",
+  "/src/assets/GuideScrappingProcess.png",
+  "/src/assets/GoverementAuthorised.jpg",
+  "/src/assets/CarGallery.jpg",
+  "/src/assets/FacilityCar.jpg",
+  "/src/assets/vehicle_scrappingUnit.jpeg",
+  "/src/assets/wonderlane-1P_dX1sxACc-unsplash.jpg",
+  "/src/assets/waste-management-6810722_1280.jpg",
+  "/src/assets/facility10.jpg",
 ];
 
 function FacilityGallery() {

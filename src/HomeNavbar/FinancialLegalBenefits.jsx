@@ -1,7 +1,7 @@
 import React from "react";
 
 const FinancialLegalBenefits = () => (
-  <div className="bg-gray-50 min-h-screen flex flex-col items-center px-4 sm:px-6 lg:px-12 py-12">
+  <div className="bg-gray-50 flex flex-col items-center px-4 sm:px-6 lg:px-12 py-6">
     {/* Heading */}
     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-2">
       Financial &amp; Legal Benefits
