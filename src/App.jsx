@@ -15,6 +15,7 @@ import ScrollToTop from './HomeNavbar/ScrollToTop';
 
 function App() {
   return (
+    <Router>
     <div>
       <Navbar />
         <ScrollToTop />
@@ -31,6 +32,7 @@ function App() {
         </Routes>
       <Footer />
     </div>
+    </Router>
   );
 }
 
