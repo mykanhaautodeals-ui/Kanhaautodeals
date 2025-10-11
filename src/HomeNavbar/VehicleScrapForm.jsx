@@ -11,12 +11,12 @@ const VehicleScrapForm = () => {
   const [phone, setPhone] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
-  const vehicles = [
-    { name: "Car", icon: "src/assets/car.png" },
-    { name: "Bike", icon: "src/assets/sportbike.png" },
-    { name: "Truck", icon: "src/assets/cargo-truck.png" },
-    { name: "Other", icon: "src/assets/maintenance.png" },
-  ];
+ const vehicles = [
+  { name: "Car", icon: `${import.meta.env.BASE_URL}assets/car.png` },
+  { name: "Bike", icon: `${import.meta.env.BASE_URL}assets/sportbike.png` },
+  { name: "Truck", icon: `${import.meta.env.BASE_URL}assets/cargo-truck.png` },
+  { name: "Other", icon: `${import.meta.env.BASE_URL}assets/maintenance.png` },
+];
 
   const makeOptions = {
     Car: ["Toyota", "Honda", "Ford"],
