@@ -18,23 +18,71 @@ const VehicleScrapForm = () => {
     { name: "Other", icon: "src/assets/maintenance.png" },
   ];
 
-  const makeOptions = {
-    Car: ["Toyota", "Honda", "Ford"],
-    Bike: ["Hero", "Bajaj", "TVS"],
-    Truck: ["Ashok Leyland", "Tata Motors", "Mahindra"],
-  };
+ const makeOptions = {
+  Car: [
+    "Toyota", "Honda", "Ford", "MarutiSuzuki", "BMW", "Hyundai", "Tata Motors",
+    "Mahindra", "Skoda", "Volkswagen", "Audi", "Mercedes-Benz", "Renault",
+    "Nissan", "Kia", "MG", "Volvo", "Lexus", "Jeep", "Fiat", "Land Rover"
+  ],
+  Bike: [
+    "Hero", "Bajaj", "TVS", "Royal Enfield", "Yamaha", "Suzuki", "KTM",
+    "Honda Rides", "Harley-Davidson", "Ducati", "Triumph", "Kawasaki",
+    "Aprilia", "BMW Motorrad"
+  ],
+  Truck: [
+    "Ashok Leyland", "Tata Motors", "Mahindra", "Eicher", "Volvo Trucks",
+    "BharatBenz", "Scania", "Isuzu", "Force Motors", "Mack Trucks", "Hino"
+  ]
+};
 
-  const modelOptions = {
-    Toyota: ["Glanza", "Fortuner", "Innova"],
-    Honda: ["City", "Amaze", "Civic"],
-    Ford: ["EcoSport", "Endeavour"],
-    Hero: ["Splendor", "Passion"],
-    Bajaj: ["Pulsar", "Platina"],
-    TVS: ["Apache", "Jupiter"],
-    "Ashok Leyland": ["Ecomet", "Boss"],
-    "Tata Motors": ["Ace", "Signa"],
-    Mahindra: ["Blazo", "Furio"],
-  };
+const modelOptions = {
+  Toyota: ["Glanza", "Fortuner", "Innova", "Corolla", "Camry", "Hilux", "Prius", "Qualis", "Etios", "Yaris"],
+  Honda: ["City", "Amaze", "Civic", "Accord", "Jazz", "WR-V", "CR-V", "Brio"],
+  Ford: ["EcoSport", "Endeavour", "Figo", "Aspire", "Freestyle", "Mustang", "Fiesta", "Ikon", "Fusion"],
+  MarutiSuzuki: ["Alto", "Swift", "Wagon R", "Baleno", "Ertiga", "Brezza", "Celerio", "Dzire", "Ignis", "SX4", "Omni", "Esteem"],
+  BMW: ["1 Series", "2 Series", "3 Series", "5 Series", "7 Series", "X1", "X3", "X5", "X7", "Z4", "M3", "M5", "i3", "i8"],
+  Hyundai: ["i10", "i20", "Creta", "Venue", "Tucson", "Verna", "Elantra", "Santro", "Accent", "Getz", "Sonata"],
+  TataMotors: ["Tiago", "Tigor", "Nexon", "Harrier", "Safari", "Punch", "Indica", "Indigo", "Nano", "Zest", "Bolt"],
+  Mahindra: ["Thar", "XUV700", "XUV500", "Scorpio", "Bolero", "Alturas G4", "TUV300", "KUV100", "Xylo", "Verito", "Jeep CJ"],
+  Skoda: ["Octavia", "Superb", "Kodiaq", "Kamiq", "Rapid", "Fabia", "Laura", "Kushaq"],
+  Volkswagen: ["Polo", "Vento", "T-Roc", "Taigun", "Jetta", "Passat", "Beetle"],
+  Audi: ["A3", "A4", "A6", "A8", "Q3", "Q5", "Q7", "Q8", "TT", "R8"],
+  MercedesBenz: ["C-Class", "E-Class", "S-Class", "GLA", "GLC", "GLE", "GLS", "A-Class", "B-Class", "Maybach"],
+  Renault: ["Kwid", "Triber", "Kiger", "Duster", "Fluence", "Lodgy", "Pulse", "Scala"],
+  Nissan: ["Magnite", "Kicks", "Altima", "Sunny", "Terrano", "Micra", "Evalia", "Teana", "X-Trail"],
+  Kia: ["Sonet", "Seltos", "Carnival", "Carens", "EV6", "Sportage"],
+  MG: ["Hector", "ZS EV", "Gloster", "Astor", "Comet EV"],
+  Volvo: ["XC40", "XC60", "S90", "V60", "XC90", "S60", "V40"],
+  Lexus: ["ES", "RX", "NX", "LS", "UX", "IS"],
+  Jeep: ["Compass", "Wrangler", "Cherokee", "Grand Cherokee", "Renegade"],
+  Fiat: ["Punto", "Linea", "Palio", "Uno", "Adventure"],
+  "Land Rover": ["Defender", "Discovery", "Range Rover", "Freelander", "Velar"],
+
+  Hero: ["Splendor","Splendor ismart", "Passion", "Glamour", "HF Deluxe", "Xpulse", "Karizma", "CD 100","Xtreme", "Achiever", "Ignitor","Hero Pleasure","Hero Maestro Edge","CBZ Xtreme", "CBZ Star", "CBZ", "CBZ Extreme Limited Edition"],
+  Bajaj: ["Pulsar", "Platina", "Discover", "Avenger", "Dominar", "CT100", "Boxer", "Chetak","VIDA","CB Hornet","Bajaj Caliber"],
+  TVS: ["Apache", "Jupiter", "Ntorq", "Star City", "Scooty Pep+", "Radeon"],
+  "Royal Enfield": ["Bullet", "Classic 350", "Thunderbird", "Meteor", "Himalayan", "Interceptor 650", "Continental GT 650"],
+  Yamaha: ["RX100", "RX135", "FZ", "R15", "MT-15", "Fascino", "Saluto"],
+  Suzuki: ["Access 125", "Gixxer", "Hayate", "Burgman", "GS150R"],
+  KTM: ["Duke 125", "Duke 200", "Duke 390", "RC 200", "RC 390"],
+  "Honda Rides": ["Activa", "Shine", "Unicorn", "Hornet", "Dio", "CBR250R"],
+  "Harley-Davidson": ["Street 750", "Iron 883", "Forty-Eight", "Fat Boy"],
+  Ducati: ["Monster", "Panigale", "Scrambler", "Multistrada"],
+  Triumph: ["Bonneville", "Street Twin", "Tiger 900", "Speed Triple"],
+  Kawasaki: ["Ninja 300", "Ninja 650", "Z650", "Versys 650"],
+  Aprilia: ["SR 150", "SR 160", "RS 660"],
+  "BMW Motorrad": ["G310R", "G310GS", "R1250GS", "S1000RR"],
+
+  "Ashok Leyland": ["Ecomet", "Boss", "Dost", "Captain", "U-Truck", "Partner"],
+  "Tata Motors Truck": ["Ace", "Signa", "Ultra", "Prima", "407", "709", "1613"],
+  "Mahindra Truck": ["Blazo", "Furio", "Loadking", "Jeeto", "Supro"],
+  Eicher: ["Pro 1049", "Pro 1110XPT", "Pro 3016", "Pro 6025"],
+  "Volvo Trucks": ["FMX", "FH", "FM", "FM 400"],
+  BharatBenz: ["1217C", "2523R", "1617R", "3528CM"],
+  Scania: ["P410", "G460", "R580"],
+  Isuzu: ["D-Max", "N-Series", "F-Series"]
+};
+
 
   const handleVehicleSelect = (vehicleName) => {
     setSelectedVehicle(vehicleName);
@@ -48,6 +96,7 @@ const VehicleScrapForm = () => {
     selectedVehicle && selectedVehicle !== "Other"
       ? makeOptions[selectedVehicle] || []
       : [];
+
   const currentModels = selectedMake ? modelOptions[selectedMake] || [] : [];
 
   const handleSubmit = (e) => {
@@ -73,7 +122,7 @@ const VehicleScrapForm = () => {
   };
 
   return (
-    <div className=" flex bg-gray-100 items-center justify-center px-4 sm:px-6 lg:px-12 py-8 mb-8 mt-16">
+    <div className="flex bg-gray-100 items-center justify-center px-4 sm:px-6 lg:px-12 py-8 mb-8 mt-16">
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto w-full rounded-lg shadow-2xl overflow-hidden">
         
         {/* Left Section */}
@@ -123,13 +172,14 @@ const VehicleScrapForm = () => {
               </div>
             </div>
 
-            {/* Make & Model */}
-            {selectedVehicle && selectedVehicle !== "Other" ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Make */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {selectedVehicle !== "Other" ? (
                 <select
                   className="p-3 border rounded-lg w-full"
                   value={selectedMake}
                   onChange={(e) => setSelectedMake(e.target.value)}
+                  required
                 >
                   <option value="">Select Make</option>
                   {currentMakes.map((make) => (
@@ -138,11 +188,25 @@ const VehicleScrapForm = () => {
                     </option>
                   ))}
                 </select>
+              ) : (
+                <input
+                  type="text"
+                  placeholder="Enter Make"
+                  value={otherMake}
+                  onChange={(e) => setOtherMake(e.target.value)}
+                  className="p-3 border rounded-lg w-full"
+                  required
+                />
+              )}
+
+              {/* Model */}
+              {selectedVehicle !== "Other" ? (
                 <select
                   className="p-3 border rounded-lg w-full"
                   value={selectedModel}
                   onChange={(e) => setSelectedModel(e.target.value)}
                   disabled={!selectedMake}
+                  required
                 >
                   <option value="">Select Model</option>
                   {currentModels.map((model) => (
@@ -151,25 +215,17 @@ const VehicleScrapForm = () => {
                     </option>
                   ))}
                 </select>
-              </div>
-            ) : selectedVehicle === "Other" ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Enter Make"
-                  value={otherMake}
-                  onChange={(e) => setOtherMake(e.target.value)}
-                  className="p-3 border rounded-lg w-full"
-                />
+              ) : (
                 <input
                   type="text"
                   placeholder="Enter Model"
                   value={otherModel}
                   onChange={(e) => setOtherModel(e.target.value)}
                   className="p-3 border rounded-lg w-full"
+                  required
                 />
-              </div>
-            ) : null}
+              )}
+            </div>
 
             {/* Vehicle Number */}
             <input
@@ -178,6 +234,7 @@ const VehicleScrapForm = () => {
               value={vehicleNumber}
               onChange={(e) => setVehicleNumber(e.target.value)}
               className="p-3 border rounded-lg w-full"
+              required
             />
 
             {/* Name & Phone */}
@@ -188,6 +245,7 @@ const VehicleScrapForm = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="p-3 border rounded-lg w-full"
+                required
               />
               <input
                 type="tel"
@@ -195,6 +253,7 @@ const VehicleScrapForm = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className="p-3 border rounded-lg w-full"
+                required
               />
             </div>
 
@@ -205,6 +264,7 @@ const VehicleScrapForm = () => {
                 checked={termsAccepted}
                 onChange={(e) => setTermsAccepted(e.target.checked)}
                 className="h-4 w-4"
+                required
               />
               <span className="ml-2">I agree to the Terms & Conditions</span>
             </div>

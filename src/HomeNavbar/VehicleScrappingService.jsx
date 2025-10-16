@@ -17,13 +17,12 @@ const VehicleScrappingService = () => {
           </h1>
           <p className="text-gray-700 text-lg mt-4 mb-2">
             Government agencies are actively seizing end-of-life vehicles across Delhi-NCR without prior notice. Protect your investment before it's too late.
-            <span className="text-red-600 font-semibold ml-1">Learn more.</span>
           </p>
           <button className="mt-6 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded-full shadow transition">
-            Scrap Now
+            <a href="#">Scrap Now</a>
           </button>
         </div>
-        <div className="md:w-1/2 flex justify-center mt-8 md:mt-0">
+        <div className="md:w-1/2 flex justify-center mt-8 md:mt-0 ">
           <img
             src="/src/assets/SeizedVehicle.png"
             alt="Vehicle Seized Illustration"
