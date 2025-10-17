@@ -8,6 +8,46 @@ const VehicleScrapForm = () => {
   const [modalYear, setModalYear] = useState("");
   const [fuelType, setFuelType] = useState("");
   const [address, setAddress] = useState("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
+
+ const vehicles = [
+  { name: "Car", icon: `${import.meta.env.BASE_URL}assets/car.png` },
+  { name: "Bike", icon: `${import.meta.env.BASE_URL}assets/sportbike.png` },
+  { name: "Truck", icon: `${import.meta.env.BASE_URL}assets/cargo-truck.png` },
+  { name: "Other", icon: `${import.meta.env.BASE_URL}assets/maintenance.png` },
+];
+
+  const makeOptions = {
+    Car: ["Toyota", "Honda", "Ford"],
+    Bike: ["Hero", "Bajaj", "TVS"],
+    Truck: ["Ashok Leyland", "Tata Motors", "Mahindra"],
+  };
+
+  const modelOptions = {
+    Toyota: ["Glanza", "Fortuner", "Innova"],
+    Honda: ["City", "Amaze", "Civic"],
+    Ford: ["EcoSport", "Endeavour"],
+    Hero: ["Splendor", "Passion"],
+    Bajaj: ["Pulsar", "Platina"],
+    TVS: ["Apache", "Jupiter"],
+    "Ashok Leyland": ["Ecomet", "Boss"],
+    "Tata Motors": ["Ace", "Signa"],
+    Mahindra: ["Blazo", "Furio"],
+  };
+
+  const handleVehicleSelect = (vehicleName) => {
+    setSelectedVehicle(vehicleName);
+    setSelectedMake("");
+    setSelectedModel("");
+    setOtherMake("");
+    setOtherModel("");
+  };
+
+  const currentMakes =
+    selectedVehicle && selectedVehicle !== "Other"
+      ? makeOptions[selectedVehicle] || []
+      : [];
+  const currentModels = selectedMake ? modelOptions[selectedMake] || [] : [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
