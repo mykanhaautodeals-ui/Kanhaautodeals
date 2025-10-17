@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-6">
           <img src="/src/assets/logo.jpeg" alt="MariiNox Logo" className="h-14" />
         <div className="flex items-center space-x-4">
-          <img src={`${import.meta.env.BASE_URL}assets/logo.jpeg`} alt="MariiNox Logo" className="h-10" />
+          <img src={`${import.meta.env.BASE_URL}assets/logo.jpeg`} alt="MariiNox Logo" className="h-14" />
           
         </div>
 

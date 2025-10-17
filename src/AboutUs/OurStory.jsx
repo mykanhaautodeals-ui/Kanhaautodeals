@@ -32,7 +32,7 @@ const OurStory = () => {
       {/* Right Section: Image */}
       <div className="flex-1">
         <img
-          src="/src/assets/ScrappingCarImages.jpg" // Replace with actual image path
+          src={`${import.meta.env.BASE_URL}assets/ScrappingCarImages.jpg`} // Replace with actual image path
           alt="Vehicle Scrapping Facility"
           className="w-full h-auto rounded-lg shadow-lg"
         />

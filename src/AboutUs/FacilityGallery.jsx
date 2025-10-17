@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 
 const images = [
-  "/src/assets/Advanceddiagnosticmaintenance.jpg",
-  "/src/assets/ModernImages.jpg",
-  "/src/assets/GuideScrappingProcess.png",
-  "/src/assets/GoverementAuthorised.jpg",
-  "/src/assets/CarGallery.jpg",
-  "/src/assets/FacilityCar.jpg",
-  "/src/assets/vehicle_scrappingUnit.jpeg",
-  "/src/assets/wonderlane-1P_dX1sxACc-unsplash.jpg",
-  "/src/assets/waste-management-6810722_1280.jpg",
-  "/src/assets/facility10.jpg",
+  `${import.meta.env.BASE_URL}assets/Advanceddiagnosticmaintenance.jpg`,
+  `${import.meta.env.BASE_URL}assets/ModernImages.jpg`,
+  `${import.meta.env.BASE_URL}assets/GuideScrappingProcess.png`,
+  `${import.meta.env.BASE_URL}assets/GoverementAuthorised.jpg`,
+  `${import.meta.env.BASE_URL}assets/CarGallery.jpg`,
+  `${import.meta.env.BASE_URL}assets/FacilityCar.jpg`,
+  `${import.meta.env.BASE_URL}assets/vehicle_scrappingUnit.jpeg`,
+  `${import.meta.env.BASE_URL}assets/wonderlane-1P_dX1sxACc-unsplash.jpg`,
+  `${import.meta.env.BASE_URL}assets/waste-management-6810722_1280.jpg`,
+  `${import.meta.env.BASE_URL}assets/facility10.jpg`,
 ];
 
 function FacilityGallery() {
