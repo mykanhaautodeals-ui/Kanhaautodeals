@@ -1,12 +1,11 @@
 import React from "react";
 
-
 const blogs = [
   {
     id: 1,
     title: "Selling vs Scrapping a Vehicle in 2025 | What's Smarter?",
     date: "29 Jul 2025",
-    image: "/src/assets/sellingVSscrapping.jpg",
+    image: `${import.meta.env.BASE_URL}assets/sellingVSscrapping.jpg`,
     excerpt:
       "Read this blog to know why scrapping a vehicle is better than selling in 2025. Understand the risks of resale and...",
   },
@@ -14,7 +13,7 @@ const blogs = [
     id: 2,
     title: "Documents Required for Vehicle Scrapping in India",
     date: "28 Jul 2025",
-    image: "/src/assets/DocumentRequired.jpg",
+    image: `${import.meta.env.BASE_URL}assets/DocumentRequired.jpg`,
     excerpt:
       "Find out what documents are required for vehicle scrapping in India. Get a complete checklist, process...",
   },
@@ -22,7 +21,7 @@ const blogs = [
     id: 3,
     title: "RVSF Explained: Why Government-Authorized Scrapping Matters",
     date: "28 Jul 2025",
-    image: "/src/assets/GoverementAuthorised.jpg",
+    image: `${import.meta.env.BASE_URL}assets/GoverementAuthorised.jpg`,
     excerpt:
       "Learn why choosing a Registered Vehicle Scrapping Facility (RVSF) matters. Get legal protection, incentives...",
   },
@@ -30,7 +29,7 @@ const blogs = [
     id: 4,
     title: "5 Mistakes to Avoid When Choosing a Vehicle Scrapping Service",
     date: "24 Jul 2025",
-    image: "/src/assets/vehicleScrapping.png",
+    image: `${import.meta.env.BASE_URL}assets/vehicleScrapping.png`,
     excerpt:
       "Choosing a vehicle scrapping service? Know about 5 common mistakes to avoid and learn how to ensure a...",
   },

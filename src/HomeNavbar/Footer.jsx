@@ -107,7 +107,7 @@ const Footer = () => {
           <p>&copy; 2025 Kanhaautodeals. All rights reserved.</p>
           <p>
             Design and Developed By{" "}
-            <a href="#" className="text-[#36D16A] hover:underline">Team Variance</a>
+            <a href="#" className="text-[#36D16A] hover:underline">Team Sidd</a>
           </p>
         </div>
       </footer>
