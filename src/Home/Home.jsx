@@ -8,7 +8,6 @@ import VehicleScrappingService from "../HomeNavbar/VehicleScrappingService";
 import FAQSection from "../HomeNavbar/FAQSection";
 const Home = () => {
   return (
-    <div className="home-section">
     <div className='home-section'>
       <VehicleScrapForm />
       <VehicleScrappingProcess />
@@ -17,8 +16,6 @@ const Home = () => {
       <OfficialCertificates />
       <VehicleScrappingService />
       <FAQSection />
-      <VehicleScrappingService /> 
-       <FAQSection />
     </div>
   );
 };
