@@ -9,13 +9,13 @@ import FAQSection from '../HomeNavbar/FAQSection';
 const Home = () => {
   return (
     <div className='home-section'>
-        <VehicleScrapForm />
-          <VehicleScrappingProcess />
+      <VehicleScrapForm />
+      <VehicleScrappingProcess />
       <WhyChooseMarilinox />
-      <FinancialLegalBenefits  />
+      <FinancialLegalBenefits />
       <OfficialCertificates />
       <VehicleScrappingService /> 
-       <FAQSection  />
+       <FAQSection />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 const VehicleProcess = () => (
-  <div className="min-h-[50vh] grid place-items-center bg-gray-50 py-10 px-4">
+  <div className="      grid place-items-center bg-gray-50 py-10 px-4">
     <div className="text-center max-w-2xl">
       {/* Badge */}
       <span className="inline-block bg-green-500 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full mb-3">

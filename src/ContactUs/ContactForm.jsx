@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    from_name: "",
-    from_email: "",
+    name: "",
+    email: "",
     phone: "",
     subject: "",
     message: "",
+    location: "",
   });
 
   const [status, setStatus] = useState("");
@@ -19,29 +19,41 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .send(
-        "service_1feme9w",   // Your EmailJS Service ID
-        "template_uhzmxev",  // Your EmailJS Template ID
-        formData,
-        "OMXwEYxR5k_pOJ2oY"  // Your EmailJS Public Key
-      )
-      .then(
-        () => {
-          setStatus("✅ Message sent successfully!");
-          setFormData({
-            from_name: "",
-            from_email: "",
-            phone: "",
-            subject: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setStatus("❌ Failed to send message. Try again.");
-          console.error(error);
-        }
-      );
+    try {
+      // Get previous messages from localStorage
+      const existingData = JSON.parse(localStorage.getItem("contactMessages")) || [];
+
+      // Add new message
+      existingData.push(formData);
+
+      // Save back to localStorage
+      localStorage.setItem("contactMessages", JSON.stringify(existingData, null, 2));
+
+      setStatus("✅ Message saved locally as JSON!");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        location: "",
+      });
+    } catch (error) {
+      console.error(error);
+      setStatus("❌ Failed to save message locally.");
+    }
+  };
+
+  const handleDownload = () => {
+    const data = localStorage.getItem("contactMessages");
+    const blob = new Blob([data || "[]"], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "contactMessages.json";
+    a.click();
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -58,20 +70,20 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <input
               type="text"
-              name="from_name"
+              name="name"
               placeholder="Your Name"
-              value={formData.from_name}
+              value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              className="w-full px-4 py-3 border rounded-lg"
               required
             />
             <input
               type="email"
-              name="from_email"
+              name="email"
               placeholder="Your Email"
-              value={formData.from_email}
+              value={formData.email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              className="w-full px-4 py-3 border rounded-lg"
               required
             />
             <input
@@ -80,13 +92,13 @@ const ContactForm = () => {
               placeholder="Phone Number"
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              className="w-full px-4 py-3 border rounded-lg"
             />
             <select
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+              className="w-full px-4 py-3 border rounded-lg"
               required
             >
               <option value="">Select a Subject</option>
@@ -101,20 +113,42 @@ const ContactForm = () => {
               placeholder="Your Message"
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none resize-none"
+              className="w-full px-4 py-3 border rounded-lg resize-none"
               required
             ></textarea>
+            <input
+              type="text"
+              name="location"
+              placeholder="Your Location"
+              value={formData.location}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border rounded-lg"
+            />
 
-            <button
-              type="submit"
-              className="w-full px-6 py-3 text-white text-lg font-medium rounded-lg shadow-md bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 transition duration-200"
-            >
-              Send Message
-            </button>
+            <div className="flex gap-4">
+              <button
+                type="submit"
+                className="flex-1 px-6 py-3 text-white text-lg font-medium rounded-lg shadow-md bg-green-600 hover:bg-green-700 transition"
+              >
+                Save Message
+              </button>
+
+              <button
+                type="button"
+                onClick={handleDownload}
+                className="flex-1 px-6 py-3 text-white text-lg font-medium rounded-lg shadow-md bg-blue-600 hover:bg-blue-700 transition"
+              >
+                Download JSON
+              </button>
+            </div>
           </form>
 
           {status && (
-            <p className={`mt-4 text-center font-medium ${status.includes('✅') ? 'text-green-600' : 'text-red-600'}`}>
+            <p
+              className={`mt-4 text-center font-medium ${
+                status.includes("✅") ? "text-green-600" : "text-red-600"
+              }`}
+            >
               {status}
             </p>
           )}
@@ -123,20 +157,17 @@ const ContactForm = () => {
         {/* Google Maps */}
         <div className="bg-white p-4 rounded-lg shadow-md">
           <h3 className="text-xl font-bold text-gray-800 mb-4">Our Location</h3>
-          <div className="rounded-lg overflow-hidden">
-            <iframe
-              title="Kanhaautodeals Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.485960410657!2d77.8920155150882!3d30.1557929818868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f1a44b89c7b6b%3A0x7c8b6c7b5e7c7b6b!2sRoorkee%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1633000000000!5m2!1sen!2sin"
-              width="100%"
-              height="600"
-              style={{ border: 0 }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
+          <iframe
+            title="Kanhaautodeals Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.485960410657!2d77.8920155150882!3d30.1557929818868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390f1a44b89c7b6b%3A0x7c8b6c7b5e7c7b6b!2sRoorkee%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1633000000000!5m2!1sen!2sin"
+            width="100%"
+            height="600"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
-
       </div>
     </div>
   );
