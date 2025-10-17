@@ -10,8 +10,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
         
         {/* Logos */}
-        <div className="flex items-center space-x-6">
-          <img src="/src/assets/logo.jpeg" alt="MariiNox Logo" className="h-14" />
+        
         <div className="flex items-center space-x-4">
           <img src={`${import.meta.env.BASE_URL}assets/logo.jpeg`} alt="MariiNox Logo" className="h-14" />
           
@@ -91,6 +90,7 @@ const Navbar = () => {
           </ul>
         </div>
       )}
+      
     </nav>
   );
 };

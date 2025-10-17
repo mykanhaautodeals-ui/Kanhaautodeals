@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const VehicleScrapForm = () => {
+  // --- Form states ---
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -10,12 +11,19 @@ const VehicleScrapForm = () => {
   const [address, setAddress] = useState("");
   const [termsAccepted, setTermsAccepted] = useState(false);
 
- const vehicles = [
-  { name: "Car", icon: `${import.meta.env.BASE_URL}assets/car.png` },
-  { name: "Bike", icon: `${import.meta.env.BASE_URL}assets/sportbike.png` },
-  { name: "Truck", icon: `${import.meta.env.BASE_URL}assets/cargo-truck.png` },
-  { name: "Other", icon: `${import.meta.env.BASE_URL}assets/maintenance.png` },
-];
+  // --- Vehicle selection states (to fix error) ---
+  const [selectedVehicle, setSelectedVehicle] = useState("");
+  const [selectedMake, setSelectedMake] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [otherMake, setOtherMake] = useState("");
+  const [otherModel, setOtherModel] = useState("");
+
+  const vehicles = [
+    { name: "Car", icon: `${import.meta.env.BASE_URL}assets/car.png` },
+    { name: "Bike", icon: `${import.meta.env.BASE_URL}assets/sportbike.png` },
+    { name: "Truck", icon: `${import.meta.env.BASE_URL}assets/cargo-truck.png` },
+    { name: "Other", icon: `${import.meta.env.BASE_URL}assets/maintenance.png` },
+  ];
 
   const makeOptions = {
     Car: ["Toyota", "Honda", "Ford"],
@@ -42,12 +50,6 @@ const VehicleScrapForm = () => {
     setOtherMake("");
     setOtherModel("");
   };
-
-  const currentMakes =
-    selectedVehicle && selectedVehicle !== "Other"
-      ? makeOptions[selectedVehicle] || []
-      : [];
-  const currentModels = selectedMake ? modelOptions[selectedMake] || [] : [];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -80,7 +82,7 @@ const VehicleScrapForm = () => {
     <div
       className="min-h-screen w-full flex items-stretch relative"
       style={{
-        backgroundImage: `url('/src/assets/carWorkshop.jpg')`,
+        backgroundImage: `url(${import.meta.env.BASE_URL}assets/carWorkshop.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
@@ -94,7 +96,9 @@ const VehicleScrapForm = () => {
           MAKE YOUR MOVE <span className="block text-green-500">NOW</span>
         </h1>
         <p className="text-white mb-6 text-base drop-shadow">
-          We will buy your car for scrap regardless of whether it is a non-runner, an insurance write-off, damaged, flood damaged or unroadworthy and whatever the make, model, age or condition.
+          We will buy your car for scrap regardless of whether it is a non-runner,
+          an insurance write-off, damaged, flood damaged, or unroadworthy—
+          whatever the make, model, age, or condition.
         </p>
       </div>
 
