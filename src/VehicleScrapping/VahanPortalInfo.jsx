@@ -4,7 +4,7 @@ const VahanPortalInfo = () => {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 bg-white rounded-lg shadow-lg">
       {/* Header Button */}
-      <button className="bg-green-600 hover:bg-green-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium block mx-auto text-sm sm:text-base transition">
+      <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium block mx-auto text-sm sm:text-base transition">
         Official Platform
       </button>
 
