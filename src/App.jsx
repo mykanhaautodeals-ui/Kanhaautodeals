@@ -12,7 +12,17 @@ import Vehicle from './VehicleScrapping/Vehicle';
 import PrivacyPolicy from './Privacy/PrivacyPolicy';
 import Term from './TermCondition/Term';
 import ScrollToTop from './HomeNavbar/ScrollToTop';
+import { Navigate } from "react-router-dom";
+import AdminLogin from './Admin/AdminLogin';
+import Dashboard from './Admin/Dashboard';
 
+const ProtectedRoute = ({ children }) => {
+  const isAdmin = localStorage.getItem("kanhaAdmin");
+
+  return isAdmin === "true"
+    ? children
+    : <Navigate to="/api/kanha/dashboard/google" />;
+};
 function App() {
   return (
     
@@ -29,6 +39,16 @@ function App() {
             <Route path="/vehicle-scrap-form" element={<Contact/>} />
             <Route path="/privacy" element={<PrivacyPolicy/>} />
             <Route path="/terms" element={<Term/>} />
+            {/* Secret Admin Routes */}
+        <Route path="/api/kanha/dashboard/google" element={<AdminLogin />} />
+        <Route
+  path="/api/kanha/dashboard/google/panel"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
         </Routes>
       <Footer />
     </div>
